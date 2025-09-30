@@ -26,7 +26,7 @@ room, bin_type = get_assignment(week_number)
 
 
 st.header("This Week's Duty")
-st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday.')
+st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday :)')
 
 st.header('Upcoming Schedule')
 weeks_ahead = 7
@@ -43,6 +43,7 @@ for i in range(weeks_ahead):
         'Dates': f"{start_date.strftime('%d %b')} - {end_date.strftime('%d %b')}",
         'Room': r,
         'Bin': b})
+
 
 df = pd.DataFrame(schedule[1:])
 st.table(df)
