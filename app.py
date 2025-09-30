@@ -29,7 +29,7 @@ st.header("This Week's Duty")
 st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday.')
 
 st.header('Upcoming Schedule')
-weeks_ahead = 6
+weeks_ahead = 7
 
 
 schedule = []
@@ -40,10 +40,9 @@ for i in range(weeks_ahead):
     start_date = datetime.date.fromisocalendar(year, future_week, 1)
     end_date = datetime.date.fromisocalendar(year, future_week, 7)
     schedule.append({
-        'Week': future_week,
         'Dates': f"{start_date.strftime('%d %b')} - {end_date.strftime('%d %b')}",
         'Room': r,
         'Bin': b})
 
-df = pd.DataFrame(schedule)
+df = pd.DataFrame(schedule[1:])
 st.table(df)
