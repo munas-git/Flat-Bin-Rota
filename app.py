@@ -4,7 +4,7 @@ import datetime
 
 
 rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5', 'Room 6']
-bins = ['Refuse Bin', 'Recycle Bin']
+bins = ['Refuse Bin', 'Recycle Bin ♻']
 
 def get_week_number():
     today = datetime.date.today()
