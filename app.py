@@ -25,14 +25,9 @@ week_number = get_week_number()
 room, bin_type = get_assignment(week_number)
 
 
-st.header("This Week's Duty")
-st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday :)')
-
-st.header('Upcoming Schedule')
 weeks_ahead = 7
-
-
 schedule = []
+
 for i in range(weeks_ahead):
     future_week = week_number + i
     r, b = get_assignment(future_week)
@@ -45,5 +40,12 @@ for i in range(weeks_ahead):
         'Bin': b})
 
 
+st.header("This Week's Duty")
+if datetime.date.today() == datetime.date.fromisocalendar(datetime.date.today().year, week_number, 7):
+    st.warning(f"Hey **{room}**, it's Sunday, please don't forget to take out the **{bin_type}**")
+else:
+    st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday :)')
+
+st.header('Upcoming Schedule')
 df = pd.DataFrame(schedule[1:])
 st.table(df)
