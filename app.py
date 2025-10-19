@@ -42,7 +42,7 @@ for i in range(weeks_ahead):
 
 st.header("This Week's Duty")
 if datetime.date.today() == datetime.date.fromisocalendar(datetime.date.today().year, week_number, 7):
-    st.warning(f"Hey **{room}**, it's Sunday, please don't forget to take out the **{bin_type}**")
+    st.warning(f"Hey **{room}**, it's Sunday, please don't forget to take out the **{bin_type} & emptying out the kitchen waste bin**")
 else:
     st.success(f'**{room}** is responsible for the **{bin_type}** by Sunday :)')
 
