@@ -49,3 +49,5 @@ else:
 st.header('Upcoming Schedule')
 df = pd.DataFrame(schedule[1:])
 st.table(df)
+
+st.markdown('>**NOTE**: Whoever is in charge of taking out the big bin (recycle/waste) for the week is ***also responsible*** for emptying out the kitchen waste bin for that week.')
